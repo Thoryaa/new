@@ -2,35 +2,13 @@
 let progress = document.getElementById("progressbar");
 let totalHeigh = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function() {
-        let proheight = (window.pageYOffset / totalHeigh) * 100;
-        progress.style.height = proheight + "%";
-    }
-    //mouse effect
-const cursor = document.querySelector(".cursor");
-var timeout;
+    let proheight = (window.pageYOffset / totalHeigh) * 100;
+    progress.style.height = proheight + "%";
+    //stiky navbar
 
-//follow cursor on mousemove
-document.addEventListener("mousemove", (e) => {
-    let x = e.pageX;
-    let y = e.pageY;
-
-    cursor.style.top = y + "px";
-    cursor.style.left = x + "px";
-    cursor.style.display = "block";
-
-    //cursor effects when mouse stopped
-    function mouseStopped() {
-        cursor.style.display = "none";
-    }
-    clearTimeout(timeout);
-    timeout = setTimeout(mouseStopped, 1000);
-});
-
-//cursor effects when mouseout
-document.addEventListener("mouseout", () => {
-    cursor.style.display = "none";
-});
-
+    this.scrollY > 20 ? navbar.classList.add("sticky") :
+        navbar.classList.remove("sticky");
+}
 
 //toggle menu
 const body = document.querySelector("body");
@@ -38,16 +16,14 @@ const navbar = document.querySelector(".navbar");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 menuBtn.onclick = () => {
-        navbar.classList.toggle("show");
-        menuBtn.classList.toggle("hide");
-        body.classList.toggle("disabled");
-    }
-    //stiky navbar
-
-window.onscroll = () => {
-    this.scrollY > 20 ? navbar.classList.add("sticky") :
-        navbar.classList.remove("sticky");
+    navbar.classList.toggle("show");
+    menuBtn.classList.toggle("hide");
+    body.classList.toggle("disabled");
 }
+
+
+
+
 
 //start slider
 const myslide = document.querySelectorAll('.myslide'),
@@ -97,10 +73,19 @@ function slidefun(n) {
     myslide[counter - 1].style.display = "block";
     dot[counter - 1].className += " active";
 }
-//share btn
-const shareOption = document.querySelector('.share-option');
+//video player
+let videoBtn = document.querySelector('.video-btn');
+let clipVideo = document.querySelector('.clip-video');
+let clipclose = document.querySelector('.clip-close');
+let video = document.querySelector('.clip-video video');
 
-document.querySelector('.share-button').addEventListener('click', function() {
-    this.classList.toggle('active');
-    shareOption.classList.toggle('active');
-});
+
+videoBtn.onclick = function() {
+    videoBtn.classList.add('activ-btnvideo');
+    clipVideo.classList.add('activ-clipvideo');
+    videoBtn.play();
+}
+clipclose.onclick = function() {
+    videoBtn.classList.remove('activ-btnvideo');
+    clipVideo.classList.remove('activ-clipvideo');
+}

@@ -160,7 +160,7 @@ body {
     z-index: 600;
     backface-visibility: hidden;
     width: calc(100% - 40px);
-    z-index: 2222;
+    z-index: 1222;
     padding: 7px 0;
     transition: all 0.3s ease;
     margin: auto;
@@ -809,91 +809,6 @@ body {
 }
 
 
-/***lines styling***/
-
-.lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    margin: auto;
-    width: 90vw;
-}
-
-.line {
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    background: #c5d0c98f;
-    overflow: hidden;
-}
-
-.line::after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 15vh;
-    width: 100%;
-    top: -50%;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--dark_green) 75%, var(--dark_green) 100%);
-    -webkit-animation: drop 7s 0s infinite;
-    animation: drop 7s 0s infinite;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
-
-.line:nth-child(1) {
-    margin-left: -25%;
-}
-
-.line:nth-child(1)::after {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
-}
-
-.line:nth-child(3) {
-    margin-left: 25%;
-}
-
-.line:nth-child(3)::after {
-    -webkit-animation-delay: 2.5s;
-    animation-delay: 2.5s;
-}
-
-.line:nth-child(4) {
-    margin-left: -48%;
-}
-
-.line:nth-child(4)::after {
-    -webkit-animation-delay: 2.6s;
-    animation-delay: 2.6s;
-}
-
-@-webkit-keyframes drop {
-    0% {
-        top: -50%;
-    }
-    100% {
-        top: 110%;
-    }
-}
-
-@keyframes drop {
-    0% {
-        top: -50%;
-    }
-    100% {
-        top: 110%;
-    }
-}
-
-
 /* start branch */
 
 .branch {
@@ -1118,190 +1033,101 @@ body {
     color: var(--font);
 }
 
-.vidio-container {
+.vision .video-container {
+    height: 220px;
+    background: -webkit-linear-gradient(var(--green_glass3), rgba(0, 0, 0, 0.8)), #efefef url(../img/v991-a-22-b.jpg);
     display: grid;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: contain;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.video-container .video-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../svg/barley.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    gap: 12px;
 }
 
-.vidio-container video {
-    height: 230px;
-    box-shadow: -26px -19px 0px 3px var(--green_glass);
-    border-radius: 5px;
-}
-
-
-/* show more button */
-
-.the-arrow {
-    width: 1px;
-    transition: all 0.2s;
-}
-
-.the-arrow.-left {
-    position: absolute;
-    top: 60%;
-    left: 8px;
-    transform: rotate(180deg);
-}
-
-.the-arrow.-left>.shaft {
-    width: 0;
-    background-color: var(--light_green);
-}
-
-.the-arrow.-left>.shaft:before,
-.the-arrow.-left>.shaft:after {
-    width: 0;
-    background-color: var(--light_green);
-}
-
-.the-arrow.-left>.shaft:before {
-    transform: rotate(0);
-}
-
-.the-arrow.-left>.shaft:after {
-    transform: rotate(0);
-}
-
-.the-arrow.-right {
-    top: 3px;
-}
-
-.the-arrow.-right>.shaft {
-    width: 1px;
-    transition-delay: 0.2s;
-    transform: rotate(180deg);
-}
-
-.the-arrow.-right>.shaft:before,
-.the-arrow.-right>.shaft:after {
-    width: 8px;
-    transition-delay: 0.3s;
-    transition: all 0.5s;
-}
-
-.the-arrow.-right>.shaft:before {
-    transform: rotate(40deg);
-}
-
-.the-arrow.-right>.shaft:after {
-    transform: rotate(-40deg);
-}
-
-.the-arrow>.shaft {
-    background-color: var(--light_green);
-    display: block;
-    height: 1px;
+.video-play {
     position: relative;
-    transition: all 0.2s;
-    transition-delay: 0;
-    will-change: transform;
-}
-
-.the-arrow>.shaft:before,
-.the-arrow>.shaft:after {
-    background-color: var(--light_green);
-    content: "";
-    display: block;
-    height: 1px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: all 0.2s;
-    transition-delay: 0;
-}
-
-.the-arrow>.shaft:before {
-    transform-origin: top right;
-}
-
-.the-arrow>.shaft:after {
-    transform-origin: bottom right;
-}
-
-.animated-arrow {
-    display: inline-block;
-    color: var(--light_green);
-    font-size: 1.25em;
-    font-style: italic;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.2s;
-}
-
-.animated-arrow:hover {
-    color: var(--gold);
-    background-color: var(--dark_green);
-    padding: 12px;
-    border-radius: 5px;
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft {
-    width: 22px;
-    transition-delay: 0.1s;
-    background-color: var(--gold);
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:before,
-.animated-arrow:hover>.the-arrow.-left>.shaft:after {
-    width: 8px;
-    transition-delay: 0.1s;
-    background-color: var(--gold);
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:before {
-    transform: rotate(40deg);
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:after {
-    transform: rotate(-40deg);
-}
-
-.animated-arrow:hover>.main {
-    transform: translateX(17px);
-    transform: translateX(16px);
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft {
-    width: 0;
-    transform: translateX(200%);
-    transition-delay: 0;
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before,
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
-    width: 0;
-    transition-delay: 0;
-    transition: all 0.1s;
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before {
-    transform: rotate(0);
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
-    transform: rotate(0);
-}
-
-.animated-arrow>.main {
+    width: 60px;
+    height: 60px;
+    background: -webkit-linear-gradient(var(--green_glass3), rgba(0, 0, 0, 0.8)), #efefef url(../img/rm222-mind-19.jpg);
+    border-radius: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0px 8px 12px #3f4642;
+    transition: .5s;
 }
 
-.animated-arrow>.main>.text {
-    margin: 0 16px 0 0;
-    line-height: 1;
-    margin-left: 12px;
+.activ-btnvideo .video-play {
+    box-shadow: 0 0 0 150vh var(--dark_green);
+    z-index: 1333;
 }
 
-.animated-arrow>.main>.the-arrow {
-    position: relative;
+.video-play::before {
+    content: "";
+    position: absolute;
+    border: 25px solid var(--bege2);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 0px solid transparent;
+    transform: translate(5px);
+}
+
+.clip-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1444;
+}
+
+.clip-video video {
+    max-width: 900px;
+}
+
+.activ-clipvideo {
+    transition-delay: .4s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.clip-video .clip-close {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--dark_green);
+    background: var(--bege2);
+    height: 33px;
+    width: 33px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media(max-width:991px) {
+    .clip-video video {
+        max-width: 90%;
+    }
 }
 
 
@@ -1349,7 +1175,7 @@ body {
     border-radius: 5px;
 }
 
-.virsion .vidio-container .card .title {
+.virsion .virsion-container .card .title {
     font-size: 1em;
     color: var(--dark-font);
 }
@@ -1359,62 +1185,6 @@ body {
     width: 200px;
     object-fit: contain;
 }
-
-
-/***down load*/
-
-.arrow {
-    text-align: center;
-    width: 100px;
-}
-
-.bounce:hover {
-    -webkit-animation: bounce 1s infinite;
-    animation: bounce 1s infinite;
-}
-
-.arrow a {
-    font-size: 20px;
-    color: var(--dark_green);
-}
-
-@-webkit-keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
-
-/* start footer ___________________________ */
-
-
-/* start footer ___________________________ */
 
 
 /* start news ___________________________ */
@@ -1631,4 +1401,309 @@ footer .social a:hover {
     opacity: 0.2;
     transform: translate(-30%, -30%);
     border-radius: 50%;
+}
+
+
+/* show more button */
+
+.the-arrow {
+    width: 1px;
+    transition: all 0.2s;
+}
+
+.the-arrow.-left {
+    position: absolute;
+    top: 60%;
+    left: 8px;
+    transform: rotate(180deg);
+}
+
+.the-arrow.-left>.shaft {
+    width: 0;
+    background-color: var(--light_green);
+}
+
+.the-arrow.-left>.shaft:before,
+.the-arrow.-left>.shaft:after {
+    width: 0;
+    background-color: var(--light_green);
+}
+
+.the-arrow.-left>.shaft:before {
+    transform: rotate(0);
+}
+
+.the-arrow.-left>.shaft:after {
+    transform: rotate(0);
+}
+
+.the-arrow.-right {
+    top: 3px;
+}
+
+.the-arrow.-right>.shaft {
+    width: 1px;
+    transition-delay: 0.2s;
+    transform: rotate(180deg);
+}
+
+.the-arrow.-right>.shaft:before,
+.the-arrow.-right>.shaft:after {
+    width: 8px;
+    transition-delay: 0.3s;
+    transition: all 0.5s;
+}
+
+.the-arrow.-right>.shaft:before {
+    transform: rotate(40deg);
+}
+
+.the-arrow.-right>.shaft:after {
+    transform: rotate(-40deg);
+}
+
+.the-arrow>.shaft {
+    background-color: var(--light_green);
+    display: block;
+    height: 1px;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+}
+
+.the-arrow>.shaft:before,
+.the-arrow>.shaft:after {
+    background-color: var(--light_green);
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    transition-delay: 0;
+}
+
+.the-arrow>.shaft:before {
+    transform-origin: top right;
+}
+
+.the-arrow>.shaft:after {
+    transform-origin: bottom right;
+}
+
+.animated-arrow {
+    display: inline-block;
+    color: var(--light_green);
+    font-size: 1.25em;
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.animated-arrow:hover {
+    color: var(--gold);
+    background-color: var(--dark_green);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft {
+    width: 22px;
+    transition-delay: 0.1s;
+    background-color: var(--gold);
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:before,
+.animated-arrow:hover>.the-arrow.-left>.shaft:after {
+    width: 8px;
+    transition-delay: 0.1s;
+    background-color: var(--gold);
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:before {
+    transform: rotate(40deg);
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:after {
+    transform: rotate(-40deg);
+}
+
+.animated-arrow:hover>.main {
+    transform: translateX(17px);
+    transform: translateX(16px);
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft {
+    width: 0;
+    transform: translateX(200%);
+    transition-delay: 0;
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before,
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
+    width: 0;
+    transition-delay: 0;
+    transition: all 0.1s;
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before {
+    transform: rotate(0);
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
+    transform: rotate(0);
+}
+
+.animated-arrow>.main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.animated-arrow>.main>.text {
+    margin: 0 16px 0 0;
+    line-height: 1;
+    margin-left: 12px;
+}
+
+.animated-arrow>.main>.the-arrow {
+    position: relative;
+}
+
+
+/***down load*/
+
+.arrow {
+    text-align: center;
+    width: 100px;
+}
+
+.bounce:hover {
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+.arrow a {
+    font-size: 20px;
+    color: var(--dark_green);
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/***lines styling***/
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 90vw;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: #c5d0c98f;
+    overflow: hidden;
+}
+
+.line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--dark_green) 75%, var(--dark_green) 100%);
+    -webkit-animation: drop 7s 0s infinite;
+    animation: drop 7s 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+    margin-left: -25%;
+}
+
+.line:nth-child(1)::after {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.line:nth-child(3) {
+    margin-left: 25%;
+}
+
+.line:nth-child(3)::after {
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+
+.line:nth-child(4) {
+    margin-left: -48%;
+}
+
+.line:nth-child(4)::after {
+    -webkit-animation-delay: 2.6s;
+    animation-delay: 2.6s;
+}
+
+@-webkit-keyframes drop {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 110%;
+    }
+}
+
+@keyframes drop {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 110%;
+    }
 }
