@@ -988,8 +988,6 @@ body {
 
 .vision .text-containert h2 {
     font-size: 40px;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
     font-weight: 800;
     color: rgb(50, 58, 69);
     position: relative;
@@ -1004,8 +1002,6 @@ body {
 
 .text-back {
     position: absolute;
-    /* font-family: 'Poppins', sans-serif; */
-    /* text-transform: uppercase; */
     font-weight: 900;
     top: -45px;
     left: 36px;
@@ -1222,6 +1218,41 @@ body {
     width: 33%;
 }
 
+.virsion .virsion-container {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+}
+
+.news .card {
+    background: var(--bege);
+    max-width: 300px;
+    text-align: center;
+    padding: 0px 22px;
+    padding-bottom: 4vh;
+    min-height: 300px;
+    border-radius: 5px;
+    background: aliceblue;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.news .card .title {
+    font-size: 1em;
+    color: var(--dark-font);
+}
+
+.news .card .img-container img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
 @media(max-width:772px) {
     .virsion {
         margin-left: 0px;
@@ -1250,7 +1281,7 @@ footer ul {
 
 footer .title {
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.2;
     color: var(--dark-font);
 }
@@ -1280,25 +1311,25 @@ footer .social-copy {
 
 /*social*/
 
-footer .social a .bx {
+.social a .bx {
     color: var(--green_glass);
     font-size: 18px;
 }
 
-footer.social-container {
+.social-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
 }
 
-footer .social {
+.social {
     display: flex;
     gap: 17px;
     align-items: center;
 }
 
-footer .social a {
+.social a {
     width: 36px;
     height: 36px;
     line-height: 36px;
@@ -1313,7 +1344,7 @@ footer .social a {
     display: grid;
 }
 
-footer .social a:hover {
+.social a:hover {
     border-radius: 100%;
 }
 
@@ -1513,10 +1544,10 @@ footer .social a:hover {
     display: inline-block;
     color: var(--light_green);
     font-size: 1.25em;
-    font-style: italic;
     text-decoration: none;
     position: relative;
     transition: all 0.2s;
+    font-weight: bold;
 }
 
 .animated-arrow:hover {
@@ -1722,4 +1753,57 @@ footer .social a:hover {
     100% {
         top: 110%;
     }
+}
+
+
+/**********************************/
+
+
+/* pages news page  */
+
+.news-page-header {
+    height: 200px;
+    background-color: var(--dark_green);
+    background-image: url(../img/4685.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.news-page-header img {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    object-fit: contain;
+    padding: 12px;
+}
+
+.news-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.news-img {
+    height: 200px;
+    width: 100%;
+}
+
+.news-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.news-text .subject {
+    font-size: 32px;
+    line-height: 1.40;
+    font-weight: 900;
+    width: 80%;
+}
+
+.news-text .date {
+    padding: 12px;
+    color: var(--gray);
 }
