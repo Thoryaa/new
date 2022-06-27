@@ -1059,7 +1059,7 @@ body {
     position: relative;
     width: 60px;
     height: 60px;
-    background: -webkit-linear-gradient(var(--green_glass3), rgba(0, 0, 0, 0.8)), #efefef url(../img/rm222-mind-19.jpg);
+    background-color: var(--dark_green);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1067,6 +1067,11 @@ body {
     cursor: pointer;
     box-shadow: 0px 8px 12px #3f4642;
     transition: .5s;
+}
+
+.vision .video-btn p {
+    color: var(--bege);
+    font-weight: bold;
 }
 
 .activ-btnvideo .video-play {
