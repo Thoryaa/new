@@ -9,12 +9,12 @@
     <!-- map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
 
+
     <!-- start styling -->
     <link rel="stylesheet" href="asset/css/style.css">
 
-    <style>
 
-    </style>
+
 </head>
 
 <body>
@@ -147,11 +147,7 @@
                             <p>هنا وصف هنا وصف نا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصف
                             </p>
                         </div>
-                        <div>
-                            <div class="primary-btn">
-                                <a href="#"><span>لنبدأ</span></a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -207,23 +203,49 @@
                 </ul>
             </div>
         </div>
-        <div class="vidio-modal">
-            <a href="">ayg</a>
-            <div class="video-container">
 
-            </div>
-        </div>
+
     </div>
     <!-- end vision -->
     <!-- start virson -->
-    <div class="vision container_padding content padding virsion">
+    <div class="vision  virsion container_padding content padding">
 
         <div class="text-containert">
-            <div class="text-back"> رؤيتنا</div>
+            <div class="text-back"> الإصدارات</div>
             <div>
-                <h2 class="has-line">رؤيتنا</h2>
+                <h2>الإصدارات</h2>
                 <p>هنا وصف هنا وصف نا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا هنا وصف هنا وصف نا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا هنا وصف هنا وصف نا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصفنا وصف هنا وصف
                 </p>
+            </div>
+            <div class="virsion-container">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="asset/img/4.webp" alt="">
+                    </div>
+                    <a href="" class="text-container">
+                        <h5 class="title"> سعيد ذهب الى عالم الاحلام</h5>
+                        <p class="date">22/2/2022</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="img-container">
+                        <img src="asset/img/4.webp" alt="">
+                    </div>
+                    <a href="" class="text-container">
+                        <h5 class="title"> سعيد ذهب الى عالم الاحلام</h5>
+                        <p class="date">22/2/2022</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="img-container">
+                        <img src="asset/img/4.webp" alt="">
+                    </div>
+                    <a href="" class="text-container">
+                        <h5 class="title"> سعيد ذهب الى عالم الاحلام</h5>
+                        <p class="date">22/2/2022</p>
+                    </a>
+                </div>
+
             </div>
             <div class='container_btn'>
                 <ul>
@@ -248,7 +270,43 @@
         </div>
 
     </div>
+
     <!-- end virsion -->
+    <!-- start news -->
+    <div class="vision news container_padding content padding">
+
+        <div class="text-containert">
+            <div class="text-back"> الأخبار</div>
+            <div>
+                <h2 class="has-line">الأخبار</h2>
+
+            </div>
+
+            <div class='container_btn'>
+                <ul>
+                    <li>
+                        <a class='animated-arrow' href=''>
+                            <span class='the-arrow -left'>
+                        <span class='shaft'></span>
+                            </span>
+                            <span class='main'>
+                        <span class='text'>
+                            عرض المزيد 
+
+                          </span>
+                            <span class='the-arrow -right'>
+                          <span class='shaft'></span>
+                            </span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- end news -->
     <!-- start branches -->
     <div class="branch content padding">
         <div class="lines">
@@ -398,9 +456,12 @@
     <script src="asset/js/app.js"></script>
     <!-- this site js files -->
 
-    <script src="asset/js/main.js"></script>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
+    <script src="asset/js/main.js"></script>
+
     <script>
         var map = L.map('map').setView([15.374247, 47.279183], 3);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -450,6 +511,8 @@
         //     cursor.style.display = "none";
         // }); -->
     <!-- </script> -->
+    <!-- Swiper JS -->
+
 </body>
 
 </html>

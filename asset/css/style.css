@@ -1061,7 +1061,6 @@ body {
 
 .vision .text-containert {
     position: relative;
-    height: 200px;
     display: flex;
     justify-content: start;
     /* align-items: center; */
@@ -1309,7 +1308,13 @@ body {
 /* start virsion ___________________________ */
 
 .virsion {
-    background: #03893b;
+    background: -webkit-linear-gradient(var(--green_glass3), rgba(0, 0, 0, 0.8)), #efefef url(../img/rm222-mind-19.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    background-size: contain;
 }
 
 .virsion .text-containert {
@@ -1325,158 +1330,34 @@ body {
     background-color: var(--bege2);
 }
 
-.virsion .text-containert p {
-    color: var(--black);
-}
-
-.virson .desc-con {
+.virsion .virsion-container {
+    display: flex;
+    justify-content: center;
     gap: 22px;
     flex-wrap: wrap;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
 }
 
-.virsion .desc-con .virson-content .img-con {
-    display: flex;
-    justify-content: center;
+.virsion .virsion-container .card {
+    background: var(--bege);
+    max-width: 300px;
+    text-align: center;
+    padding: 0px 22px;
+    padding-bottom: 4vh;
+    min-height: 300px;
+    border-radius: 5px;
 }
 
-.virsion .desc-con .virson-content .img-con img {
-    height: 132px;
+.virsion .vidio-container .card .title {
+    font-size: 1em;
+    color: var(--dark-font);
+}
+
+.virsion .virsion-container .card .img-container img {
+    height: 200px;
     width: 200px;
     object-fit: contain;
-}
-
-.virsion .desc-con .virson-content .button-cont {
-    width: 100%;
-    background: var(--bege);
-    display: flex;
-    justify-content: space-between;
-    padding: 11px;
-    margin-top: 8vh;
-}
-
-
-/*share*/
-
-.mainbox {
-    position: absolute;
-    left: 37%;
-    top: 0;
-}
-
-.label {
-    position: relative;
-    background: #fff;
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    line-height: 50px;
-    text-align: center;
-    font-size: 22px;
-    display: block;
-    color: var(--dark_green);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-
-.label:hover {
-    letter-spacing: 1px;
-}
-
-.label::before {
-    content: 'X';
-    position: absolute;
-    height: 100%;
-    width: 100;
-    left: 0;
-    top: 0;
-    background: #fff;
-    border-radius: 35px;
-    opacity: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-#check {
-    display: none;
-}
-
-#check:checked~label::before {
-    opacity: 1;
-}
-
-#check:checked~label {
-    width: 100px;
-}
-
-.media-icons {
-    position: absolute;
-    left: 50%;
-    top: -120px;
-    transform: translateX(-50%);
-    background: #fff;
-    width: 140%;
-    height: 110%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 35px;
-    padding: 4px;
-    z-index: 1;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
-
-#check:checked~.media-icons {
-    opacity: 1;
-    pointer-events: auto;
-    top: -60px;
-}
-
-.media-icons::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    left: 50%;
-    background: #fff;
-    bottom: -9px;
-    transform: translateX(-50%) rotate(45deg);
-    z-index: -1;
-}
-
-.media-icons a {
-    font-size: 22px;
-    color: var(--dark_green);
-    transition: all 0.3s ease;
-}
-
-.media-icons a:hover {
-    transform: translateY(-2px);
-}
-
-.media-icons a:nth-child(1):hover {
-    color: #426782;
-}
-
-.media-icons a:nth-child(2):hover {
-    color: #1da1f2;
-}
-
-.media-icons a:nth-child(3):hover {
-    color: #e1306c;
-}
-
-.media-icons a:nth-child(4):hover {
-    color: #ff0000;
 }
 
 
@@ -1527,6 +1408,39 @@ body {
     60% {
         transform: translateY(-15px);
     }
+}
+
+
+/* start footer ___________________________ */
+
+
+/* start footer ___________________________ */
+
+
+/* start news ___________________________ */
+
+.news .text-containert {
+    border: none;
+    justify-content: center;
+    text-align: center;
+}
+
+.news .has-line::after {
+    top: 34px;
+    position: absolute;
+    width: 38%;
+}
+
+.news .has-line::before {
+    content: '';
+    height: 3px;
+    border-radius: 20px;
+    background-color: var(--dark_green);
+    display: block;
+    margin: 15px 0px 18px;
+    position: absolute;
+    left: 3px;
+    width: 33%;
 }
 
 
