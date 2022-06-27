@@ -1075,7 +1075,7 @@ body {
 }
 
 .activ-btnvideo .video-play {
-    box-shadow: 0 0 0 150vh var(--dark_green);
+    box-shadow: 0 0 0 150vh var(--gray-font);
     z-index: 1333;
 }
 
@@ -1109,6 +1109,9 @@ body {
 .activ-clipvideo {
     transition-delay: .4s;
     transform: translate(-50%, -50%) scale(1);
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(var(--green_glass3), rgba(0, 0, 0, 0.8)), #efefef url(../img/rm222-mind-19.jpg);
 }
 
 .clip-video .clip-close {
